@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sudha Murthy – Author & Philanthropist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --cream: #FAF6F0;
+      --warm-white: #FDF9F4;
+      --saffron: #E8821A;
+      --saffron-light: #F5A848;
+      --forest: #2C4A2E;
+      --gold: #C9952A;
+      --text-dark: #1A1A1A;
+      --text-mid: #4A4A4A;
+      --text-light: #7A7068;
+      --border: #E5DDD4;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 60px;
+      background: rgba(250,246,240,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px; font-weight: 700;
+      color: var(--text-dark);
+      letter-spacing: 0.5px;
+    }
+    .nav-logo span { color: var(--saffron); }
+
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      font-size: 13px; font-weight: 400; letter-spacing: 0.6px;
+      color: var(--text-mid); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--saffron); }
+
+    .nav-social { display: flex; gap: 14px; }
+    .nav-social a {
+      width: 32px; height: 32px; border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-mid); text-decoration: none; font-size: 12px;
+      transition: all 0.2s;
+    }
+    .nav-social a:hover { background: var(--saffron); color: #fff; border-color: var(--saffron); }
+
+    /* ── HERO / ABOUT ── */
+    #about {
+      min-height: 100vh;
+      padding: 120px 60px 80px;
+      display: flex; flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 75% 40%, rgba(232,130,26,0.10) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 50% at 10% 70%, rgba(44,74,46,0.08) 0%, transparent 70%);
+    }
+
+    .section-label {
+      font-size: 11px; font-weight: 500; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--saffron);
+      margin-bottom: 8px;
+    }
+
+    .about-inner {
+      position: relative; z-index: 1;
+      text-align: center; padding-bottom: 60px;
+    }
+
+    .about-inner .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(48px, 7vw, 88px);
+      font-weight: 300; line-height: 1;
+      color: var(--text-dark); margin-bottom: 6px;
+    }
+    .about-inner .page-title em { font-style: italic; color: var(--saffron); }
+
+    .about-content {
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr 380px;
+      gap: 60px; align-items: center; margin-top: 10px;
+    }
+
+    .about-text .tag {
+      font-size: 11px; font-weight: 500; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--saffron); margin-bottom: 20px;
+    }
+
+    .about-text h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 600; line-height: 1.15;
+      color: var(--text-dark); margin-bottom: 20px;
+    }
+
+    .about-text p {
+      font-size: 15px; line-height: 1.8; color: var(--text-mid);
+      max-width: 520px; margin-bottom: 36px;
+    }
+
+    .btn-group { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .btn-primary {
+      padding: 13px 28px; background: var(--saffron); color: #fff;
+      border: none; border-radius: 6px; font-size: 13px; font-weight: 500;
+      cursor: pointer; text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: #d0720e; transform: translateY(-1px); }
+
+    .btn-outline {
+      padding: 13px 28px; background: transparent; color: var(--text-dark);
+      border: 1px solid var(--border); border-radius: 6px;
+      font-size: 13px; font-weight: 400; cursor: pointer;
+      text-decoration: none; transition: all 0.2s;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .btn-outline:hover { border-color: var(--saffron); color: var(--saffron); }
+
+    .about-image {
+      position: relative; display: flex; justify-content: center;
+    }
+
+    .about-image .img-ring {
+      width: 320px; height: 320px; border-radius: 50%;
+      border: 3px solid var(--saffron);
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+      box-shadow: 0 0 0 12px rgba(232,130,26,0.08), 0 20px 60px rgba(232,130,26,0.2);
+    }
+
+    .about-image .img-ring::before {
+      content: '';
+      position: absolute; inset: -20px; border-radius: 50%;
+      border: 2px dashed rgba(232,130,26,0.35);
+      animation: spin 18s linear infinite;
+    }
+
+    .about-image .img-ring::after {
+      content: '';
+      position: absolute; inset: -36px; border-radius: 50%;
+      border: 1px dashed rgba(232,130,26,0.15);
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    .about-image .img-inner {
+      width: 280px; height: 280px; border-radius: 50%; overflow: hidden;
+      background: linear-gradient(135deg, #E8D5B7 0%, #D4B896 100%);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+    }
+
+    .about-image .img-inner img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+      border-radius: 50%;
+    }
+
+    /* Stats strip */
+    .stats-strip {
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 0; border-top: 1px solid var(--border);
+      margin-top: 60px; padding-top: 40px;
+    }
+
+    .stat-item {
+      padding: 0 30px 0 0;
+      border-right: 1px solid var(--border);
+    }
+    .stat-item:last-child { border-right: none; padding-left: 30px; }
+    .stat-item:first-child { padding-left: 0; }
+
+    .stat-icon { font-size: 22px; margin-bottom: 8px; }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px; font-weight: 700; color: var(--text-dark);
+      line-height: 1;
+    }
+    .stat-num span { color: var(--saffron); }
+    .stat-label { font-size: 12px; color: var(--text-light); margin-top: 4px; }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 100px 60px; }
+
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 4vw, 56px); font-weight: 300;
+      color: var(--text-dark);
+    }
+    .section-header h2 em { font-style: italic; color: var(--saffron); }
+
+    /* ── SERVICES / ROLES ── */
+    #services { background: var(--warm-white); }
+
+    .services-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+      max-width: 900px; margin: 0 auto;
+    }
+
+    .service-card {
+      background: var(--cream); border: 1px solid var(--border);
+      border-radius: 16px; padding: 32px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+      background: var(--saffron); opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
+    .service-card:hover::before { opacity: 1; }
+
+    .service-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: rgba(232,130,26,0.12);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; margin-bottom: 16px;
+    }
+    .service-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px; font-weight: 600; margin-bottom: 10px;
+    }
+    .service-card p { font-size: 14px; line-height: 1.7; color: var(--text-mid); margin-bottom: 14px; }
+    .read-more {
+      font-size: 12px; font-weight: 500; letter-spacing: 0.5px;
+      color: var(--saffron); text-decoration: none;
+      display: inline-flex; align-items: center; gap: 4px;
+    }
+    .read-more:hover { gap: 8px; }
+
+    /* ── BOOKS / CLIENTS ── */
+    #books { background: var(--cream); }
+
+    .books-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+      max-width: 960px; margin: 0 auto;
+    }
+
+    .book-card {
+      background: var(--warm-white);
+      border: 1px solid var(--border); border-radius: 12px;
+      overflow: hidden; transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .book-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
+
+    .book-cover {
+      height: 180px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 48px;
+      position: relative; overflow: hidden;
+    }
+
+    .book-cover-1 { background: linear-gradient(135deg, #2C4A2E, #4A7A4C); }
+    .book-cover-2 { background: linear-gradient(135deg, #8B3A1C, #C0622A); }
+    .book-cover-3 { background: linear-gradient(135deg, #1A3A5C, #2E6A9E); }
+    .book-cover-4 { background: linear-gradient(135deg, #5C2A5C, #8E4A8E); }
+    .book-cover-5 { background: linear-gradient(135deg, #3A2A1A, #7A5A3A); }
+    .book-cover-6 { background: linear-gradient(135deg, #1A4A3A, #2E7A5A); }
+
+    .book-cover-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.9);
+      text-align: center; padding: 12px; line-height: 1.4;
+    }
+
+    .book-info { padding: 20px; }
+    .book-info .genre {
+      font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--saffron); margin-bottom: 6px;
+    }
+    .book-info h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px; font-weight: 600; margin-bottom: 6px;
+    }
+    .book-info p { font-size: 13px; color: var(--text-light); line-height: 1.6; }
+
+    /* ── AWARDS ── */
+    #awards { background: var(--forest); color: #fff; }
+    #awards .section-label { color: var(--saffron-light); }
+    #awards .section-header h2 { color: #fff; }
+
+    .awards-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+      max-width: 900px; margin: 0 auto;
+      border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden;
+    }
+
+    .award-item {
+      padding: 36px 30px;
+      border-right: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .award-item:hover { background: rgba(255,255,255,0.05); }
+    .award-item:nth-child(3n) { border-right: none; }
+
+    .award-icon { font-size: 32px; margin-bottom: 12px; }
+    .award-item h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px; font-weight: 600; color: #fff; margin-bottom: 6px;
+    }
+    .award-item p { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+    /* ── PHILANTHROPY ── */
+    #philanthropy { background: var(--warm-white); }
+
+    .phil-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      max-width: 960px; margin: 0 auto;
+    }
+
+    .phil-card {
+      background: var(--cream); border-radius: 16px; padding: 32px;
+      border: 1px solid var(--border); text-align: center;
+      transition: all 0.2s;
+    }
+    .phil-card:hover { border-color: var(--saffron); box-shadow: 0 8px 30px rgba(232,130,26,0.12); }
+    .phil-card .phil-icon { font-size: 36px; margin-bottom: 16px; }
+    .phil-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px; font-weight: 600; margin-bottom: 10px;
+    }
+    .phil-card p { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
+
+    /* ── QUOTE ── */
+    #quote {
+      background: var(--cream);
+      text-align: center; padding: 80px 60px;
+    }
+    .quote-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 120px; line-height: 0.6; color: var(--saffron);
+      opacity: 0.3; margin-bottom: 20px;
+    }
+    blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(24px, 3vw, 38px); font-style: italic;
+      font-weight: 300; line-height: 1.5; color: var(--text-dark);
+      max-width: 820px; margin: 0 auto 24px;
+    }
+    .quote-attr {
+      font-size: 13px; letter-spacing: 1px; color: var(--text-light);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text-dark); color: rgba(255,255,255,0.7);
+      padding: 60px; display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px;
+    }
+
+    .footer-brand .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 14px;
+    }
+    .footer-brand .logo span { color: var(--saffron); }
+    .footer-brand p { font-size: 13px; line-height: 1.7; max-width: 240px; }
+
+    .footer-col h5 {
+      font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
+      color: #fff; margin-bottom: 16px;
+    }
+    .footer-col p, .footer-col a {
+      font-size: 13px; line-height: 1.9; color: rgba(255,255,255,0.55);
+      text-decoration: none; display: block;
+    }
+    .footer-col a:hover { color: var(--saffron-light); }
+
+    .footer-social { display: flex; gap: 10px; margin-top: 12px; }
+    .footer-social a {
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.6); font-size: 13px;
+      transition: all 0.2s; text-decoration: none;
+    }
+    .footer-social a:hover { background: var(--saffron); color: #fff; border-color: var(--saffron); }
+
+    .footer-bottom {
+      background: var(--text-dark); color: rgba(255,255,255,0.3);
+      text-align: center; padding: 16px 60px;
+      font-size: 12px; border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-up { animation: fadeUp 0.7s ease forwards; opacity: 0; }
+    .fade-up:nth-child(2) { animation-delay: 0.15s; }
+    .fade-up:nth-child(3) { animation-delay: 0.3s; }
+    .fade-up:nth-child(4) { animation-delay: 0.45s; }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      section { padding: 70px 24px; }
+      #about { padding: 100px 24px 60px; }
+      .about-content { grid-template-columns: 1fr; }
+      .about-image { order: -1; }
+      .stats-strip { grid-template-columns: repeat(2, 1fr); }
+      .services-grid, .books-grid, .phil-grid { grid-template-columns: 1fr; }
+      .awards-grid { grid-template-columns: repeat(2, 1fr); }
+      footer { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav>
+  <div class="nav-logo">Sudha<span>.</span></div>
+  <ul class="nav-links">
+    <li><a href="#about" class="active">About</a></li>
+    <li><a href="#services">Work</a></li>
+    <li><a href="#books">Books</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#philanthropy">Philanthropy</a></li>
+    <li><a href="#quote">Quotes</a></li>
+  </ul>
+  <div class="nav-social">
+    <a href="#" title="Twitter">𝕏</a>
+    <a href="#" title="LinkedIn">in</a>
+    <a href="#" title="Instagram">◎</a>
+  </div>
+</nav>
+
+<!-- ── ABOUT / HERO ── -->
+<section id="about">
+  <div class="hero-bg"></div>
+
+  <div class="about-inner fade-up">
+    <div class="section-label">About Me</div>
+    <h1 class="page-title">About <em>Me</em></h1>
+  </div>
+
+  <div class="about-content">
+    <div class="about-text fade-up">
+      <div class="tag">I am Sudha Murthy</div>
+      <h1>A storyteller, educator<br>& philanthropist<br>from India</h1>
+      <p>
+        I have dedicated my life to literature, education, and social change. 
+        As a bestselling author of over 30 books, a Padma Bhushan awardee, 
+        and the chairperson of the Infosys Foundation, I believe that simple 
+        acts of compassion can transform lives. I invite you to explore the 
+        stories and ideas that have shaped my journey.
+      </p>
+      <div class="btn-group">
+        <a href="#books" class="btn-primary">Explore Books</a>
+        <a href="#philanthropy" class="btn-outline">My Work →</a>
+      </div>
+    </div>
+
+    <div class="about-image fade-up">
+      <div class="img-ring">
+        <div class="img-inner">
+          <img
+            src="sudha.jpg"
+            alt="Sudha Murthy"
+            onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#C0622A,#E8821A);border-radius:50%;\'><span style=\'font-family:Cormorant Garamond,serif;font-size:72px;font-weight:700;color:white;letter-spacing:-2px;\'>SM</span></div>';"
+            style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:50%;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-strip">
+    <div class="stat-item reveal">
+      <div class="stat-icon">📚</div>
+      <div class="stat-num">+<span>30</span></div>
+      <div class="stat-label">Books Published</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-icon">🏛️</div>
+      <div class="stat-num">+<span>50K</span></div>
+      <div class="stat-label">Libraries Built</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-icon">🎓</div>
+      <div class="stat-num">+<span>100K</span></div>
+      <div class="stat-label">Students Supported</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-icon">🏆</div>
+      <div class="stat-num"><span>Padma</span></div>
+      <div class="stat-label">Bhushan Awardee</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES / ROLES ── -->
+<section id="services">
+  <div class="section-header reveal">
+    <div class="section-label">What I Do</div>
+    <h2>My Areas of <em>Impact</em></h2>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">✍️</div>
+      <h3>Author & Storyteller</h3>
+      <p>I write fiction, non-fiction, and children's books that blend wisdom with warmth. My stories draw from Indian values, real-life anecdotes, and a deep belief in human goodness.</p>
+      <a href="#books" class="read-more">Explore books →</a>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🏫</div>
+      <h3>Education Advocate</h3>
+      <p>Through the Infosys Foundation, I have established thousands of libraries and computer labs across rural India, believing education is the greatest equaliser of all.</p>
+      <a href="#philanthropy" class="read-more">Learn more →</a>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🌱</div>
+      <h3>Social Reformer</h3>
+      <p>I champion causes for women's rights, sanitation, and rural development. Every act of philanthropy, however small, can create ripples of lasting change in society.</p>
+      <a href="#philanthropy" class="read-more">Read more →</a>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🎤</div>
+      <h3>Speaker & Mentor</h3>
+      <p>I speak at institutions and events worldwide, sharing stories of resilience, simplicity, and purpose. My message is that ordinary people can achieve extraordinary things.</p>
+      <a href="#quote" class="read-more">Hear my thoughts →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── BOOKS ── -->
+<section id="books">
+  <div class="section-header reveal">
+    <div class="section-label">My Books</div>
+    <h2>Featured <em>Works</em></h2>
+  </div>
+
+  <div class="books-grid">
+    <div class="book-card reveal">
+      <div class="book-cover book-cover-1">
+        <div class="book-cover-text">Wise and Otherwise</div>
+      </div>
+      <div class="book-info">
+        <div class="genre">Non-Fiction</div>
+        <h4>Wise and Otherwise</h4>
+        <p>50 real-life anecdotes from ordinary people that reveal extraordinary truths about Indian life and society.</p>
+      </div>
+    </div>
+    <div class="book-card reveal">
+      <div class="book-cover book-cover-2">
+        <div class="book-cover-text">Mahashweta</div>
+      </div>
+      <div class="book-info">
+        <div class="genre">Fiction</div>
+        <h4>Mahashweta</h4>
+        <p>A poignant novel about a young woman with leukoderma and her journey of self-discovery and acceptance.</p>
+      </div>
+    </div>
+    <div class="book-card reveal">
+      <div class="book-cover book-cover-3">
+        <div class="book-cover-text">How I Taught My Grandmother to Read</div>
+      </div>
+      <div class="book-info">
+        <div class="genre">Short Stories</div>
+        <h4>How I Taught My Grandmother to Read</h4>
+        <p>Heartwarming stories celebrating the human spirit, rooted in the values of love and learning.</p>
+      </div>
+    </div>
+    <div class="book-card reveal">
+      <div class="book-cover book-cover-4">
+        <div class="book-cover-text">Dollar Bahu</div>
+      </div>
+      <div class="book-info">
+        <div class="genre">Fiction</div>
+        <h4>Dollar Bahu</h4>
+        <p>A sharp exploration of greed, family dynamics, and the immigrant experience through an NRI family.</p>
+      </div>
+    </div>
+    <div class="book-card reveal">
+      <div class="book-cover book-cover-5">
+        <div class="book-cover-text">The Magic Drum</div>
+      </div>
+      <div class="book-info">
+        <div class="genre">Children</div>
+        <h4>The Magic Drum</h4>
+        <p>Delightful tales from Indian folklore reimagined for young readers to inspire curiosity and wonder.</p>
+      </div>
+    </div>
+    <div class="book-card reveal">
+      <div class="book-cover book-cover-6">
+        <div class="book-cover-text">Three Thousand Stitches</div>
+      </div>
+      <div class="book-info">
+        <div class="genre">Non-Fiction</div>
+        <h4>Three Thousand Stitches</h4>
+        <p>Ordinary people, extraordinary lives — stories of hope and dignity from the grassroots of India.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AWARDS ── -->
+<section id="awards">
+  <div class="section-header reveal">
+    <div class="section-label">Recognitions</div>
+    <h2>Honours & <em>Awards</em></h2>
+  </div>
+
+  <div class="awards-grid">
+    <div class="award-item reveal">
+      <div class="award-icon">🏅</div>
+      <h4>Padma Bhushan</h4>
+      <p>Awarded by the Government of India for distinguished service to the nation</p>
+    </div>
+    <div class="award-item reveal">
+      <div class="award-icon">📖</div>
+      <h4>R.K. Narayan Award</h4>
+      <p>For excellence in literature and contribution to Indian storytelling</p>
+    </div>
+    <div class="award-item reveal">
+      <div class="award-icon">🌟</div>
+      <h4>Crossword Book Award</h4>
+      <p>Recognised as one of India's most beloved and widely read authors</p>
+    </div>
+    <div class="award-item reveal">
+      <div class="award-icon">👩‍💼</div>
+      <h4>Rajyotsava Award</h4>
+      <p>Karnataka's highest civilian honour for social and cultural contribution</p>
+    </div>
+    <div class="award-item reveal">
+      <div class="award-icon">🎓</div>
+      <h4>Honorary Doctorates</h4>
+      <p>Conferred by multiple leading universities across India</p>
+    </div>
+    <div class="award-item reveal">
+      <div class="award-icon">🏆</div>
+      <h4>Attimabbe Award</h4>
+      <p>For outstanding contribution to Kannada literature and language</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── PHILANTHROPY ── -->
+<section id="philanthropy">
+  <div class="section-header reveal">
+    <div class="section-label">My Philanthropy</div>
+    <h2>Giving <em>Back</em></h2>
+  </div>
+
+  <div class="phil-grid">
+    <div class="phil-card reveal">
+      <div class="phil-icon">🏫</div>
+      <h4>Libraries & Schools</h4>
+      <p>Established over 50,000 libraries across rural India, making books accessible to millions of children who would otherwise never own one.</p>
+    </div>
+    <div class="phil-card reveal">
+      <div class="phil-icon">💧</div>
+      <h4>Clean Water & Sanitation</h4>
+      <p>Worked with communities in Karnataka and Maharashtra to build toilets, water tanks, and sanitation facilities for underserved villages.</p>
+    </div>
+    <div class="phil-card reveal">
+      <div class="phil-icon">👩‍⚕️</div>
+      <h4>Women Empowerment</h4>
+      <p>Supported thousands of women through skill-building programmes, healthcare initiatives, and access to financial aid across India.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── QUOTE ── -->
+<section id="quote">
+  <div class="reveal">
+    <div class="quote-mark">"</div>
+    <blockquote>
+      Be simple. Be humble. Work hard. Give back. That is the only philosophy you need to live a meaningful life.
+    </blockquote>
+    <div class="quote-attr">— SUDHA MURTHY</div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-brand">
+    <div class="logo">Sudha<span>.</span></div>
+    <p>Author, philanthropist, and educator dedicated to building a more equitable and compassionate India.</p>
+    <div class="footer-social">
+      <a href="#">𝕏</a>
+      <a href="#">in</a>
+      <a href="#">◎</a>
+      <a href="#">▶</a>
+    </div>
+  </div>
+  <div class="footer-col">
+    <h5>Contact</h5>
+    <p>Infosys Foundation</p>
+    <p>Electronics City, Bengaluru</p>
+    <p>Karnataka, India – 560100</p>
+    <a href="mailto:contact@sudhamurthy.in">contact@sudhamurthy.in</a>
+  </div>
+  <div class="footer-col">
+    <h5>Quick Links</h5>
+    <a href="#about">About</a>
+    <a href="#books">Books</a>
+    <a href="#awards">Awards</a>
+    <a href="#philanthropy">Philanthropy</a>
+  </div>
+  <div class="footer-col">
+    <h5>Follow</h5>
+    <a href="#">Twitter / X</a>
+    <a href="#">LinkedIn</a>
+    <a href="#">Instagram</a>
+    <a href="#">YouTube</a>
+  </div>
+</footer>
+<div class="footer-bottom">
+  © 2024 Sudha Murthy. All rights reserved.
+</div>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Active nav highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.id; });
+    navLinks.forEach(a => {
+      a.classList.remove('active');
+      if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nita Ambani Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#e6e6e6;
+    display:flex;
+    justify-content:center;
+    padding:30px;
+}
+
+.container{
+    max-width:1100px;
+    width:100%;
+    background:#f7f7f7;
+    border-radius:20px;
+    padding:40px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+/* LEFT */
+.left{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.title{
+    font-size:38px;
+    font-weight:600;
+}
+
+.title span{
+    color:#4b8f8c;
+    font-style:italic;
+}
+
+.desc{
+    font-size:14px;
+    color:#555;
+    line-height:1.6;
+}
+
+/* CONTACT */
+.contact div{
+    margin:8px 0;
+    font-size:14px;
+}
+
+/* SECTION TITLE */
+.section-title{
+    font-size:20px;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+/* EDUCATION */
+.education div{
+    margin-bottom:12px;
+    font-size:14px;
+}
+
+/* SKILLS */
+.skills{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.skills ul{
+    font-size:14px;
+}
+
+/* RIGHT */
+.right{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+    align-items:center;
+}
+
+/* IMAGE */
+.profile{
+    background:#4b8f8c;
+    padding:20px;
+    border-radius:30px;
+}
+
+.profile img{
+    width:220px;
+    border-radius:20px;
+}
+
+/* LANGUAGES */
+.lang{
+    width:100%;
+}
+
+.lang div{
+    background:white;
+    padding:10px 15px;
+    border-radius:20px;
+    margin-bottom:10px;
+    display:flex;
+    justify-content:space-between;
+}
+
+/* SOFTWARE */
+.software{
+    width:100%;
+}
+
+.bar{
+    height:6px;
+    background:#ddd;
+    border-radius:10px;
+    margin:5px 0 10px;
+}
+
+.fill{
+    height:100%;
+    background:#4b8f8c;
+    border-radius:10px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .container{
+        grid-template-columns:1fr;
+    }
+    .right{
+        align-items:flex-start;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- LEFT -->
+<div class="left">
+
+<h1 class="title">Hello, I am <span>Nita Ambani</span></h1>
+
+<p class="desc">
+Nita Ambani is a visionary philanthropist and business leader. She plays a major role in education,
+healthcare, sports, and cultural development through Reliance Foundation.
+</p>
+
+<!-- CONTACT -->
+<div>
+<h3 class="section-title">Contact</h3>
+<div class="contact">
+    <div>📧 nita@ambani.com</div>
+    <div>📞 +91 9876543210</div>
+    <div>📍 Mumbai, India</div>
+</div>
+</div>
+
+<!-- EDUCATION -->
+<div>
+<h3 class="section-title">Education</h3>
+<div class="education">
+    <div><b>Commerce Graduate</b> | University of Mumbai</div>
+    <div><b>Leadership Programs</b> | Global Institutions</div>
+</div>
+</div>
+
+<!-- SKILLS -->
+<div class="skills">
+<div>
+<h3 class="section-title">Core Skills</h3>
+<ul>
+<li>Philanthropy</li>
+<li>Leadership</li>
+<li>Education Development</li>
+<li>Healthcare Initiatives</li>
+</ul>
+</div>
+
+<div>
+<h3 class="section-title">Soft Skills</h3>
+<ul>
+<li>Communication</li>
+<li>Teamwork</li>
+<li>Creativity</li>
+<li>Visionary Thinking</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<!-- RIGHT -->
+<div class="right">
+
+<div class="profile">
+    <img src="nita.jpg" alt="Nita Ambani">
+</div>
+
+<!-- LANGUAGES -->
+<div class="lang">
+<h3 class="section-title">Languages</h3>
+<div><span>English</span><span>Fluent</span></div>
+<div><span>Hindi</span><span>Native</span></div>
+<div><span>Gujarati</span><span>Basic</span></div>
+</div>
+
+<!-- SOFTWARE -->
+<div class="software">
+<h3 class="section-title">Expertise</h3>
+
+<div>Leadership<div class="bar"><div class="fill" style="width:95%"></div></div></div>
+<div>Management<div class="bar"><div class="fill" style="width:90%"></div></div></div>
+<div>Public Speaking<div class="bar"><div class="fill" style="width:85%"></div></div></div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+// Simple animation on load
+window.onload = () => {
+    document.querySelector(".container").style.opacity = "1";
+}
+</script>
+
+</body>
+</html>

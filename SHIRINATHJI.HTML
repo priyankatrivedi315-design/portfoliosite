@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shrinathji – The Divine Child of Nathdwara</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #a0720a;
+      --gold-light: #7a5208;
+      --gold-dark: #5c3c06;
+      --deep: #f9f3e8;
+      --deep2: #f0e8d5;
+      --mid: #e8dcc8;
+      --accent: #8b2252;
+      --cream: #2c1a0e;
+      --white: #ffffff;
+      --text-muted: #5a4030;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fdf6e3 0%, #f5ead0 50%, #fdf6e3 100%);
+      color: #2c1a0e;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ---- Animated stars background ---- */
+    .stars {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none; z-index: 0; overflow: hidden;
+    }
+    .star {
+      position: absolute; background: #c9a84c; border-radius: 50%;
+      animation: twinkle 3s infinite alternate;
+    }
+    @keyframes twinkle { from { opacity: 0.2; } to { opacity: 1; } }
+
+    /* ---- Header ---- */
+    header {
+      position: relative; z-index: 10;
+      padding: 50px 60px 40px;
+      background: linear-gradient(to bottom, rgba(160,114,10,0.12), transparent);
+      border-bottom: 1px solid rgba(160,114,10,0.3);
+    }
+    .header-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .header-left {
+      flex: 1;
+    }
+    .header-right {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .deity-img-frame {
+      position: relative;
+      width: 220px; height: 280px;
+    }
+    .deity-img-frame::before {
+      content: '';
+      position: absolute; inset: -8px;
+      border-radius: 50% 50% 48% 48% / 55% 55% 45% 45%;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold-light), var(--gold-dark));
+      animation: haloRotate 6s linear infinite;
+      z-index: 0;
+    }
+    @keyframes haloRotate {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+    .deity-img-frame::after {
+      content: '';
+      position: absolute; inset: -2px;
+      border-radius: 50% 50% 48% 48% / 55% 55% 45% 45%;
+      background: var(--deep2);
+      z-index: 1;
+    }
+    .deity-img-frame img {
+      position: relative; z-index: 2;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: 50% 50% 48% 48% / 55% 55% 45% 45%;
+      border: 3px solid var(--gold);
+      display: block;
+    }
+    .deity-img-fallback {
+      position: relative; z-index: 2;
+      width: 100%; height: 100%;
+      border-radius: 50% 50% 48% 48% / 55% 55% 45% 45%;
+      border: 3px solid var(--gold);
+      background: radial-gradient(ellipse at 40% 30%, #3a1a6e, #1a0a2e);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 10px;
+    }
+    .deity-img-fallback .big-om {
+      font-size: 72px; line-height: 1;
+      background: linear-gradient(135deg, #a0720a, #c9a84c);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 18px rgba(201,168,76,0.8));
+      animation: float 4s ease-in-out infinite;
+    }
+    .deity-img-fallback .deity-name {
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem; color: #5c3c06; letter-spacing: 2px;
+    }
+    .om-symbol {
+      font-size: 42px; line-height: 1;
+      background: linear-gradient(135deg, #a0720a, #c9a84c);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 8px rgba(160,114,10,0.3));
+      animation: float 4s ease-in-out infinite;
+      display: inline-block;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    header h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      color: #5c3c06;
+      text-shadow: none;
+      margin: 12px 0 8px;
+      letter-spacing: 2px;
+    }
+    header p.subtitle {
+      font-size: 1rem; color: #5a4030; font-weight: 300;
+      letter-spacing: 1px;
+    }
+    .divider {
+      width: 120px; height: 2px;
+      background: linear-gradient(to right, transparent, #a0720a, transparent);
+      margin: 18px 0;
+    }
+
+    /* ---- Main layout ---- */
+    main {
+      position: relative; z-index: 10;
+      max-width: 1100px; margin: 0 auto;
+      padding: 40px 20px 80px;
+      display: grid;
+      gap: 40px;
+    }
+
+    /* ---- Section cards ---- */
+    .card {
+      background: rgba(255,255,255,0.80);
+      border: 1px solid rgba(160,114,10,0.25);
+      border-radius: 18px;
+      padding: 36px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 20px rgba(160,114,10,0.08);
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .card:hover { border-color: rgba(160,114,10,0.55); transform: translateY(-3px); }
+
+    .card h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.45rem; font-weight: 600;
+      color: #5c3c06;
+      margin-bottom: 20px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .card h2 .icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, #7a5208, #c9a84c);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
+    }
+
+    .card p {
+      font-size: 0.97rem; line-height: 1.85;
+      color: #3a2510;
+      margin-bottom: 12px;
+    }
+    .card p:last-child { margin-bottom: 0; }
+
+    /* ---- Info grid ---- */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .info-item {
+      background: rgba(160,114,10,0.07);
+      border: 1px solid rgba(160,114,10,0.2);
+      border-radius: 12px;
+      padding: 18px 16px;
+      text-align: center;
+      transition: background 0.3s;
+    }
+    .info-item:hover { background: rgba(160,114,10,0.14); }
+    .info-item .label {
+      font-size: 0.75rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1px;
+      color: #7a5208; margin-bottom: 6px;
+    }
+    .info-item .value {
+      font-size: 0.95rem; color: #2c1a0e; font-weight: 500;
+    }
+
+    /* ---- YouTube video ---- */
+    .video-section h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.45rem; color: #5c3c06;
+      margin-bottom: 20px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .video-wrapper {
+      position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+      border-radius: 14px;
+      border: 2px solid rgba(160,114,10,0.35);
+      box-shadow: 0 4px 24px rgba(160,114,10,0.12);
+    }
+    .video-wrapper iframe {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%; border: none;
+      border-radius: 12px;
+    }
+
+    /* ---- Darshan timings ---- */
+    .timing-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px; margin-top: 20px;
+    }
+    .timing-item {
+      background: rgba(160,114,10,0.06);
+      border-left: 3px solid #a0720a;
+      border-radius: 0 10px 10px 0;
+      padding: 14px 16px;
+    }
+    .timing-item .name { font-weight: 600; color: #5c3c06; font-size: 0.95rem; }
+    .timing-item .desc { font-size: 0.82rem; color: #5a4030; margin-top: 4px; }
+
+    /* ---- Fact pills ---- */
+    .fact-pills {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px;
+    }
+    .pill {
+      background: rgba(160,114,10,0.10);
+      border: 1px solid rgba(160,114,10,0.3);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 0.84rem;
+      color: #5c3c06;
+      cursor: default;
+      transition: background 0.2s;
+    }
+    .pill:hover { background: rgba(160,114,10,0.20); }
+
+    /* ---- Two column layout ---- */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+    @media (max-width: 760px) {
+      .two-col { grid-template-columns: 1fr; }
+      header { padding: 36px 20px 30px; }
+      .header-inner { flex-direction: column-reverse; align-items: center; text-align: center; }
+      .header-left { text-align: center; }
+      .divider { margin: 18px auto; }
+      .deity-img-frame { width: 160px; height: 200px; }
+    }
+
+    /* ---- Footer ---- */
+    footer {
+      position: relative; z-index: 10;
+      text-align: center;
+      padding: 28px;
+      border-top: 1px solid rgba(160,114,10,0.2);
+      color: #5a4030;
+      font-size: 0.85rem;
+    }
+    footer span { color: #7a5208; }
+
+    /* ---- Scroll reveal ---- */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- Starfield -->
+<div class="stars" id="stars"></div>
+
+<!-- Corner Image: Shrinathji top-left -->
+<div style="
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  animation: cornerFloat 4s ease-in-out infinite;
+">
+  <!-- Outer glow ring -->
+  <div style="
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    padding: 4px;
+    background: conic-gradient(#c9a84c, #f0d080, #a0720a, #f0d080, #c9a84c, #f0d080, #c9a84c);
+    box-shadow: 0 0 18px rgba(160,114,10,0.45), 0 4px 20px rgba(160,114,10,0.3);
+    animation: haloSpin 8s linear infinite;
+  ">
+    <div style="
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      background: #fdf6e3;
+      padding: 3px;
+      overflow: hidden;
+    ">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Shrinathji.jpg/400px-Shrinathji.jpg"
+        alt="Shrinathji"
+        style="
+          width: 100%; height: 100%;
+          object-fit: cover;
+          border-radius: 50%;
+          display: block;
+        "
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+      />
+      <div style="
+        display: none;
+        width: 100%; height: 100%;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #fdf6e3, #f5ead0);
+        align-items: center; justify-content: center;
+        flex-direction: column;
+      ">
+        <span style="font-size: 36px; color: #a0720a;">ॐ</span>
+      </div>
+    </div>
+  </div>
+  <!-- Label below image -->
+  <div style="
+    background: linear-gradient(135deg, #a0720a, #c9a84c);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-family: 'Cinzel', serif;
+    box-shadow: 0 2px 10px rgba(160,114,10,0.3);
+    white-space: nowrap;
+  ">🪔 SHRINATHJI</div>
+</div>
+
+<style>
+  @keyframes cornerFloat {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-8px); }
+  }
+  @keyframes haloSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+</style>
+
+<!-- Header -->
+<header>
+  <div class="header-inner">
+
+    <!-- LEFT: text content -->
+    <div class="header-left">
+      <div class="om-symbol">ॐ</div>
+      <h1>Shrinathji</h1>
+      <p class="subtitle">The Divine Child Form of Lord Krishna • Nathdwara, Rajasthan</p>
+      <div class="divider"></div>
+      <p style="color:#5a4030; font-size:0.9rem; max-width:520px;">
+        Jai Shri Krishna — The presiding deity of Pushtimarg, worshipped as the seven-year-old child who lifted Govardhan Hill
+      </p>
+      <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;">
+        <span style="background:rgba(160,114,10,0.12); border:1px solid rgba(160,114,10,0.35); border-radius:20px; padding:6px 18px; font-size:0.82rem; color:#5c3c06;">🏛️ Nathdwara Temple</span>
+        <span style="background:rgba(160,114,10,0.12); border:1px solid rgba(160,114,10,0.35); border-radius:20px; padding:6px 18px; font-size:0.82rem; color:#5c3c06;">🪔 Pushtimarg</span>
+        <span style="background:rgba(160,114,10,0.12); border:1px solid rgba(160,114,10,0.35); border-radius:20px; padding:6px 18px; font-size:0.82rem; color:#5c3c06;">🙏 Rajasthan, India</span>
+      </div>
+    </div>
+
+    <!-- RIGHT: Shrinathji image -->
+    <div class="header-right">
+      <div class="deity-img-frame">
+        <img
+          src="https://i.pinimg.com/736x/26/b0/46/26b046f1453101f8ec8785b3021ba0d3.jpg"
+          alt="Shrinathji – the Divine Child of Nathdwara"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        />
+        <div class="deity-img-fallback" style="display:none;">
+          <span class="big-om">ॐ</span>
+          <span class="deity-name">SHRINATHJI</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<main>
+
+  <!-- Who is Shrinathji -->
+  <div class="card reveal">
+    <h2><span class="icon">🪔</span> Who is Shrinathji?</h2>
+    <p>
+      Shrinathji is a sacred form of Lord Krishna, manifested as a seven-year-old child. He is the central presiding deity of the Vaishnava sect known as <strong style="color:#5c3c06">Pushtimarg</strong> (the Path of Grace), also called Vallabha Sampradaya, established by the saint Vallabhacharya.
+    </p>
+    <p>
+      The deity depicts the child Krishna with his left arm raised, symbolising the miraculous act of lifting the Govardhan Hill on his little finger to protect the residents of Vrindavan from the wrath of Lord Indra. His right fist is shown resting at his waist, and a large diamond is placed just beneath his lips.
+    </p>
+    <p>
+      The icon is carved in bas-relief from a monolithic black marble stone, adorned with figures of three sages, two cows, one lion, one snake, two peacocks, and one parrot. The deity is treated as a living royal child — dressed, fed, and cared for throughout the day.
+    </p>
+    <div class="fact-pills">
+      <span class="pill">Form of Lord Krishna</span>
+      <span class="pill">7-Year-Old Child Deity</span>
+      <span class="pill">Black Marble Idol</span>
+      <span class="pill">Pushtimarg Sect</span>
+      <span class="pill">Nathdwara, Rajasthan</span>
+      <span class="pill">Self-Manifested (Swayambhu)</span>
+    </div>
+  </div>
+
+  <!-- Key Info Grid -->
+  <div class="card reveal">
+    <h2><span class="icon">📜</span> Key Facts</h2>
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="label">Also Known As</div>
+        <div class="value">Thakurji, Devadaman, Govardhanathji</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Temple Location</div>
+        <div class="value">Nathdwara, Rajasthan (48 km from Udaipur)</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Temple Built</div>
+        <div class="value">17th Century (1672 CE)</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Idol Material</div>
+        <div class="value">Monolithic Black Marble</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Founded By</div>
+        <div class="value">Vallabhacharya & Vitthal Nathji</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Daily Darshans</div>
+        <div class="value">8 Times a Day</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Worshipped In</div>
+        <div class="value">Gujarat, Rajasthan & worldwide</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Annual Visitors</div>
+        <div class="value">Over 1,00,000 devotees/year</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- History -->
+  <div class="two-col">
+    <div class="card reveal">
+      <h2><span class="icon">🏔️</span> Origin Story</h2>
+      <p>
+        According to legend, Shrinathji's face and arm self-manifested from the Govardhan Hill near Mathura. In 1466, a Braj resident discovered the raised left arm of the lord while searching for his cow. The locals began worshipping this divine form.
+      </p>
+      <p>
+        In 1535, a cow belonging to Saddu Pandey of Anyor village started offering milk at the hill every afternoon. On the day of Vaishakh Krishna Ekadashi, Pandey discovered the Mukharvind (sacred face) of Govardhanathji. Shri Vallabhacharya was then divinely instructed to build a temple on that very hill.
+      </p>
+    </div>
+    <div class="card reveal">
+      <h2><span class="icon">🛕</span> Journey to Nathdwara</h2>
+      <p>
+        In 1672 CE, to protect the idol from the Mughal emperor Aurangzeb's iconoclasm, the idol was transported from Mathura along the river Yamuna. It was kept in Agra for six months before being moved further south on a chariot.
+      </p>
+      <p>
+        When the chariot reached the village of Sihad (Sinhad) in Mewar, the wheels sank axle-deep in the mud and could not move further. The priests understood this was Shrinathji's chosen spot. Maharana Raj Singh of Mewar offered protection, and the temple was built there — now the city of Nathdwara.
+      </p>
+    </div>
+  </div>
+
+  <!-- Darshan Timings -->
+  <div class="card reveal">
+    <h2><span class="icon">🕯️</span> 8 Daily Darshans (Jhankis)</h2>
+    <p>The inner sanctum opens 8 times each day, each darshan representing a specific moment in the divine child's daily routine:</p>
+    <div class="timing-list">
+      <div class="timing-item">
+        <div class="name">1. Mangala</div>
+        <div class="desc">Dawn — waking the Lord from sleep, dressed simply</div>
+      </div>
+      <div class="timing-item">
+        <div class="name">2. Shringar</div>
+        <div class="desc">Morning — dressed in seasonal splendor, royal ornaments</div>
+      </div>
+      <div class="timing-item">
+        <div class="name">3. Gwal</div>
+        <div class="desc">Morning — private darshan, Krishna tending his cows</div>
+      </div>
+      <div class="timing-item">
+        <div class="name">4. Rajbhog</div>
+        <div class="desc">Midday — grandest darshan, royal feast is offered</div>
+      </div>
+      <div class="timing-item">
+        <div class="name">5. Uthapan</div>
+        <div class="desc">Afternoon — awakening from afternoon rest</div>
+      </div>
+      <div class="timing-item">
+        <div class="name">6. Bhog</div>
+        <div class="desc">Evening — afternoon snack offered to the Lord</div>
+      </div>
+      <div class="timing-item">
+        <div class="name">7. Sandhya Aarti</div>
+        <div class="desc">Sunset — evening prayers and aarti</div>
+      </div>
+      <div class="timing-item">
+        <div class="name">8. Shayan</div>
+        <div class="desc">Night — bedtime preparations, the Lord rests</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- YouTube Video -->
+  <div class="card reveal video-section">
+    <h2><span class="icon" style="background:linear-gradient(135deg,#c00,#f00);">▶</span> Watch: Shrinathji Aarti & Darshan</h2>
+    <p style="margin-bottom:20px;">Experience the divine darshan and aarti of Shrinathji at Nathdwara:</p>
+    <div class="video-wrapper">
+      <iframe
+        src="shriji.mp4"
+        title="Shrinathji Aarti Darshan"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <p style="margin-top:16px; font-size:0.85rem; color:#5a4030;">
+      🔔 Search <strong style="color:#5c3c06">"Shrinathji Darshan Nathdwara"</strong> on YouTube for live darshan videos and bhajans.
+    </p>
+  </div>
+
+  <!-- Temple Info -->
+  <div class="card reveal">
+    <h2><span class="icon">🏛️</span> The Nathdwara Temple (Haveli)</h2>
+    <p>
+      The Shrinathji Temple, popularly known as <strong style="color:#5c3c06">Shrinathji ki Haveli</strong> (House of Shrinathji), is run like a royal mansion. The temple has a chariot for movement, a milk storehouse (Doodhghar), a betel storehouse (Paanghar), a sweets storehouse (Mishrighar), a flower storehouse (Phoolghar), a functional kitchen (Rasoighar), a jewellery chamber (Gahnaghar), a treasury, horse stables (Ashvashala), a drawing room (Baithak), and a gold and silver grinding wheel (Chakki).
+    </p>
+    <p>
+      The deity's clothes change 8 times a day and are never reused — worn clothes are given to devotees as prasad. During festivals like Janmashtami, Holi, and Diwali, the deity wears garments woven with gold wires and diamond-studded embroidery. The temple celebrates on average <strong style="color:#5c3c06">three festivals every week</strong>.
+    </p>
+  </div>
+
+  <!-- Pushtimarg -->
+  <div class="card reveal">
+    <h2><span class="icon">🌸</span> Pushtimarg — The Path of Grace</h2>
+    <p>
+      Pushtimarg is the devotional tradition (sampraday) founded by Shri Vallabhacharya (1479–1531 CE), a great philosopher-saint of the Shuddhadvaita (pure non-dualism) school. The word <em>Pushti</em> means nourishment or grace — this is the path of surrendering completely to Lord Krishna's grace.
+    </p>
+    <p>
+      Vitthal Nathji, son of Vallabhacharya, institutionalised worship at Nathdwara and formally named the deity Shrinathji. The tradition is widely followed in Gujarat, Rajasthan, and among the Bhatia community. Devotees known as Vaishnavas worship Shrinathji through <strong style="color:#5c3c06">Seva</strong> — loving, personal service to the Lord as if he were truly a living child.
+    </p>
+  </div>
+
+</main>
+
+<footer>
+  <p>🪔 <span>Jai Shri Shrinathji</span> — May the Divine Child of Nathdwara bless all devotees 🪔</p>
+  <p style="margin-top:8px;">Temple: Nathdwara, Rajasthan, India &nbsp;|&nbsp; Official: nathdwaratemple.org</p>
+</footer>
+
+<script>
+  // Generate starfield
+  const starsContainer = document.getElementById('stars');
+  for (let i = 0; i < 120; i++) {
+    const star = document.createElement('div');
+    star.classList.add('star');
+    const size = Math.random() * 2.5 + 0.5;
+    star.style.cssText = `
+      width: ${size}px; height: ${size}px;
+      top: ${Math.random() * 100}%;
+      left: ${Math.random() * 100}%;
+      animation-delay: ${Math.random() * 3}s;
+      animation-duration: ${2 + Math.random() * 3}s;
+    `;
+    starsContainer.appendChild(star);
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

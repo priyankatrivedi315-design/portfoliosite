@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smriti Irani | UGC Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@400;500;600&amp;display=swap');
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(to bottom, #f8f1e3, #f5e8d3);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: #9c6644;
+            transition: width 0.4s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: -1px;
+        }
+        
+        .phone-frame {
+            border: 12px solid #1f2937;
+            border-radius: 48px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgb(156 102 68 / 0.2);
+        }
+    </style>
+</head>
+<body class="bg-[#f8f1e3] text-[#3f2a1e]">
+
+    <!-- NAVBAR -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-[#9c6644] text-white rounded-2xl flex items-center justify-center font-bold text-2xl">SI</div>
+                <div class="heading-font text-3xl tracking-tight">Smriti Irani</div>
+            </div>
+            
+            <ul class="hidden md:flex gap-8 text-sm font-medium">
+                <li><a href="#home" class="nav-link">HOME</a></li>
+                <li><a href="#about" class="nav-link">ABOUT</a></li>
+                <li><a href="#work" class="nav-link">WORK</a></li>
+                <li><a href="#gallery" class="nav-link">GALLERY</a></li>
+                <li><a href="#contact" class="nav-link">CONTACT</a></li>
+            </ul>
+            
+            <button onclick="toggleMobileMenu()" class="md:hidden text-3xl">☰</button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home" class="hero-bg min-h-screen flex items-center pt-16">
+        <div class="max-w-7xl mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <!-- Left: Image + Name -->
+                <div class="md:col-span-5">
+                    <div class="relative">
+                        <div class="aspect-[4/5] bg-white rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white">
+                            <img src="smiriti.jpg" 
+                                 alt="Smriti Irani" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <!-- Decorative arch overlay effect -->
+                        <div class="absolute -top-6 -right-6 w-40 h-40 bg-white/80 backdrop-blur rounded-full flex items-center justify-center border-4 border-[#9c6644]">
+                            <div class="text-center">
+                                <div class="text-[#9c6644] text-xs tracking-widest">UGC</div>
+                                <div class="heading-font text-4xl">Portfolio</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right: Name & Social -->
+                <div class="md:col-span-7">
+                    <div class="max-w-md">
+                        <div class="text-[#9c6644] text-sm tracking-[4px] font-medium">POLITICIAN • ACTRESS • INFLUENCER</div>
+                        <h1 class="heading-font text-7xl leading-none mt-4">SMRITI<br>IRANI</h1>
+                        <p class="mt-6 text-xl text-[#6b553f]">Former Union Minister | Acclaimed Actress | Voice of Bharat</p>
+                        
+                        <div class="flex gap-6 mt-12">
+                            <a href="https://www.instagram.com/smritiiraniofficial/" target="_blank" class="text-4xl hover:scale-110 transition">📸</a>
+                            <a href="#" class="text-4xl hover:scale-110 transition">▶️</a>
+                            <a href="#" class="text-4xl hover:scale-110 transition">𝕏</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT ME -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <div class="inline-block px-8 py-3 border border-[#9c6644] rounded-full text-[#9c6644] font-medium tracking-widest">ABOUT ME</div>
+            </div>
+            
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-4">
+                    <div class="rounded-3xl overflow-hidden shadow-xl">
+                        <img src="si.jpg" 
+                             alt="Smriti Irani" 
+                             class="w-full">
+                    </div>
+                </div>
+                
+                <div class="md:col-span-8">
+                    <div class="max-w-2xl">
+                        <p class="text-lg leading-relaxed text-[#4a3728]">
+                            I'm Smriti Irani, a proud Indian who has worn many hats — from a beloved television actress who played Tulsi Virani in <span class="font-semibold">Kyunki Saas Bhi Kabhi Bahu Thi</span>, to a dynamic politician and former Union Minister.
+                        </p>
+                        <p class="text-lg leading-relaxed text-[#4a3728] mt-6">
+                            Born in New Delhi, I have dedicated my life to public service, women empowerment, and strengthening India's cultural fabric. Passionate about education, textiles, and creating meaningful impact.
+                        </p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-8 mt-16">
+                        <div>
+                            <div class="text-5xl font-light text-[#9c6644]">1976</div>
+                            <div class="text-sm uppercase tracking-widest mt-2">Born in New Delhi</div>
+                        </div>
+                        <div>
+                            <div class="text-5xl font-light text-[#9c6644]">2001</div>
+                            <div class="text-sm uppercase tracking-widest mt-2">Iconic TV Debut</div>
+                        </div>
+                        <div>
+                            <div class="text-5xl font-light text-[#9c6644]">2014</div>
+                            <div class="text-sm uppercase tracking-widest mt-2">Entered Politics</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO / WORK PORTFOLIO -->
+    <section id="work" class="py-20 bg-[#f8f1e3]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="inline-block px-8 py-3 border border-[#9c6644] rounded-full text-[#9c6644] font-medium tracking-widest">VIDEO PORTFOLIO</div>
+            </div>
+            
+            <div class="grid md:grid-cols-12 gap-8 items-center">
+                <!-- Phone Mockups -->
+                <div class="md:col-span-7 grid grid-cols-3 gap-6">
+                    <div class="phone-frame bg-white">
+                        <img src="https://picsum.photos/id/201/400/700" class="w-full h-full object-cover">
+                    </div>
+                    <div class="phone-frame bg-white">
+                        <img src="https://picsum.photos/id/251/400/700" class="w-full h-full object-cover">
+                    </div>
+                    <div class="phone-frame bg-white">
+                        <img src="https://picsum.photos/id/133/400/700" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <!-- Right Content -->
+                <div class="md:col-span-5">
+                    <h2 class="section-title text-6xl leading-none">My Journey in Frames</h2>
+                    <p class="mt-8 text-[#4a3728]">
+                        From the sets of iconic Indian television to the corridors of power in New Delhi, here are glimpses of my work, speeches, campaigns, and moments that define my public life.
+                    </p>
+                    
+                    <a href="#" onclick="alert('In a real site this would open a video reel or YouTube playlist')" 
+                       class="inline-flex items-center gap-3 mt-10 px-8 py-5 bg-[#9c6644] text-white rounded-3xl font-medium hover:bg-[#7d512f]">
+                        <span>WATCH HIGHLIGHTS</span>
+                        <span class="text-2xl">▶</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-center section-title text-5xl mb-12">Moments That Matter</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                <img src="https://picsum.photos/id/1005/600/600" onclick="showModal(this.src)" 
+                     class="rounded-3xl cursor-pointer hover:brightness-110 transition">
+                <img src="https://picsum.photos/id/1011/600/600" onclick="showModal(this.src)" 
+                     class="rounded-3xl cursor-pointer hover:brightness-110 transition">
+                <img src="https://picsum.photos/id/870/600/600" onclick="showModal(this.src)" 
+                     class="rounded-3xl cursor-pointer hover:brightness-110 transition">
+                <img src="https://picsum.photos/id/201/600/600" onclick="showModal(this.src)" 
+                     class="rounded-3xl cursor-pointer hover:brightness-110 transition">
+                <img src="https://picsum.photos/id/251/600/600" onclick="showModal(this.src)" 
+                     class="rounded-3xl cursor-pointer hover:brightness-110 transition">
+                <img src="https://picsum.photos/id/133/600/600" onclick="showModal(this.src)" 
+                     class="rounded-3xl cursor-pointer hover:brightness-110 transition">
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-20 bg-[#f8f1e3]">
+        <div class="max-w-2xl mx-auto px-6 text-center">
+            <h2 class="section-title text-5xl mb-8">Let's Connect</h2>
+            <p class="text-[#6b553f]">For collaborations, speaking engagements, or messages of support</p>
+            
+            <form onsubmit="handleSubmit(event)" class="mt-12 space-y-6">
+                <input type="text" placeholder="Your Name" required
+                       class="w-full bg-white border border-[#d4b99f] rounded-3xl px-8 py-6 focus:outline-none focus:border-[#9c6644]">
+                <input type="email" placeholder="Email Address" required
+                       class="w-full bg-white border border-[#d4b99f] rounded-3xl px-8 py-6 focus:outline-none focus:border-[#9c6644]">
+                <textarea placeholder="Your Message" rows="5" required
+                          class="w-full bg-white border border-[#d4b99f] rounded-3xl px-8 py-6 focus:outline-none focus:border-[#9c6644]"></textarea>
+                <button type="submit"
+                        class="w-full py-6 bg-[#9c6644] text-white font-semibold rounded-3xl hover:bg-[#7d512f]">
+                    SEND MESSAGE
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#3f2a1e] text-[#d4b99f] py-12 text-center text-sm">
+        Smriti Irani UGC Portfolio • Inspired by premium templates • Made with HTML, Tailwind CSS &amp; JavaScript
+    </footer>
+
+    <!-- MODAL -->
+    <div id="modal" class="hidden fixed inset-0 bg-black/90 z-[100] flex items-center justify-center p-6">
+        <div class="relative max-w-3xl w-full">
+            <button onclick="hideModal()" class="absolute -top-12 right-4 text-white text-5xl">×</button>
+            <img id="modal-image" src="" class="rounded-3xl shadow-2xl w-full">
+        </div>
+    </div>
+
+    <script>
+        function toggleMobileMenu() {
+            alert("📱 Full mobile menu would appear here.\n\nThe portfolio is fully responsive.");
+        }
+        
+        function showModal(src) {
+            document.getElementById('modal-image').src = src;
+            document.getElementById('modal').classList.remove('hidden');
+            document.getElementById('modal').classList.add('flex');
+        }
+        
+        function hideModal() {
+            const modal = document.getElementById('modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+        
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert("✅ Thank you! Your message has been received.\n\n(This is a demo portfolio)");
+            e.target.reset();
+        }
+        
+        // Close modal on ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") hideModal();
+        });
+        
+        console.log("%c✅ Smriti Irani Portfolio Loaded Successfully!", "color:#9c6644; font-size:15px");
+    </script>
+</body>
+</html>

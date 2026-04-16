@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madhuri Dixit Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:#fff;
+}
+
+/* NAV */
+nav{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 40px;
+    position:fixed;
+    width:100%;
+    backdrop-filter:blur(10px);
+    z-index:10;
+}
+
+nav a{
+    margin-left:20px;
+    text-decoration:none;
+    color:#fff;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(to right,#020617,#1e293b);
+}
+
+.hero h1{
+    font-size:60px;
+    text-shadow:0 0 20px #ff4d6d;
+}
+
+.hero p{
+    margin-top:10px;
+    opacity:0.7;
+}
+
+/* SECTION */
+.section{
+    padding:80px 40px;
+}
+
+/* GLASS CARD */
+.card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    padding:30px;
+    border-radius:20px;
+}
+
+.video-container {
+    max-width: 900px;
+    margin: auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.video-container iframe {
+    border-radius: 20px;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+img{
+    width:100%;
+    border-radius:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <h2>Madhuri Dixit</h2>
+    <div>
+        <a href="#home">Home</a>
+        <a href="#video">Video</a>
+        <a href="#about">About</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+    <h1>Madhuri Dixit</h1>
+    <p>Timeless Grace • Dance Legend</p>
+</section>
+<section id="video" class="section">
+
+    <h2 style="text-align:center;margin-bottom:30px;">
+        Featured Performance 🎬
+    </h2>
+
+    <div class="video-container card">
+        
+        <!-- AUTOPLAY VIDEO -->
+       <iframe 
+    width="100%" 
+    height="500"
+    src="123song.mp4"
+    frameborder="0"
+    allow="autoplay; encrypted-media; picture-in-picture"
+    allowfullscreen>
+</iframe>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+    <div class="card">
+        <h2>About</h2>
+        <p>Madhuri Dixit is one of the most iconic actresses in Indian cinema, known for her dance, expressions, and timeless beauty.</p>
+    </div>
+</section>
+
+<script>
+
+// SMOOTH SCROLL
+document.querySelectorAll("nav a").forEach(link=>{
+    link.addEventListener("click", function(e){
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href"))
+        .scrollIntoView({behavior:"smooth"});
+    });
+});
+
+</script>
+
+</body>
+</html>
